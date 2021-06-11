@@ -82,3 +82,31 @@
 .footer_table_header_text {
     display: inline-flex;
 }
+
+.footer_table {
+    display: inline-block;
+}
+.footer_table > thead > tr > th {
+    margin-bottom: 30px;
+}
+
+.blue_button {
+    background: #0275B1;
+    width: 100%;
+    color: white;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-family: "Gotham Pro";
+    font-weight: bolder;
+}
+
+.white_button {
+    width: 100%;
+    color: #0275B1;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-family: "Gotham Pro";
+    font-weight: bolder;
+    border: solid;
+    border-width: 2.2px;
+}
