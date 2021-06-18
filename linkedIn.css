@@ -39,6 +39,7 @@ body {
     justify-content: center;
     position: fixed;
     background: #FFFFFF;
+    z-index: 99;
 }
 
 .main{
@@ -426,8 +427,7 @@ body {
     display: flex;
 }
 
-.profile-information__options-info {
-    background: #ffffff;
+.profile-information__button {
     border: 1px solid #0275b1;
     box-sizing: border-box;
     border-radius: 4px;
@@ -439,32 +439,16 @@ body {
     line-height: 11px;
     text-align: center;
     text-transform: uppercase;
-    color: #0275b1;
 }
 
-.profile-information__options-info:hover {
+.profile-information__button-blue {
     background: linear-gradient(180deg, #0077b5 0%, #0e6795 100%);
     color: #ffffff;
 }
 
-.profile-information__connections {
+.profile-information__button-white {
     background: #ffffff;
-    border: 1px solid #0275b1;
-    box-sizing: border-box;
-    border-radius: 4px;
-    width: 170px;
-    height: 32px;
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 11px;
-    text-align: center;
-    text-transform: uppercase;
     color: #0275b1;
-}
-
-.profile-information__connections:hover {
-    background: linear-gradient(180deg, #0077b5 0%, #0e6795 100%);
-    color: #ffffff;
 }
 
 .dashboard_block{
