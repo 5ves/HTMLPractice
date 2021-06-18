@@ -91,18 +91,122 @@
           </button>
         </div>
       </div>
-      <img src="images/avatar.svg" class="main-profile__avatar">
+      <div class="main-profile__bottom-block">
+        <img src="images/avatar.svg" class="main-profile__avatar">
+        <div class = "profile-information">
+          <div class = "profile-information__top-row">
+            <div class = "profile-information__top-left">
+              <div class = "profile-information__top-name">Dmitry Kargaev</div>
+              <img src="images/Logo (2).svg" class = "profile-information__top-logo">
+            </div>
+            <div class = "profile-information__top-right">
+              <img src="images/navigation.svg" class = "profile-information__top-location-img">
+              <div class = "profile-information__top-location">Saint Petersburg, Russian Federation</div>
+            </div>
+          </div>
+          <div class = "profile-information__description">Freelance UX/UI designer, 80+ projects in web design, mobile apps (iOS & android) and creative projects. Open to offers.</div>
+          <div class = "profile-information__options">
+            <button class = "profile-information__options-info">Contact info</button>
+            <button class = "profile-information__connections">1,043 connections</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="main__right">
     <div class="dashboard_block">
-      <div class="dashboard__row-flex">
+      <div class="buttons-row-flex">
         <div class="header_button__text">YOUR DASHBOARD</div>
         <a href="index.html" class="footer__href_text blue_color">GO TO STATS</a>
       </div>
-      <div class="dashboard__number">367</div>
+      <div class="statistic">
+        <div class="dashboard__number">367</div>
+        <div class="dashboard__text">views today</div>
+        <div class="dashboard__number">15</div>
+        <div class="dashboard__text">posts views</div>
+        <div class="dashboard__number">9</div>
+        <div class="dashboard__text">search appearances</div>
+      </div>
     </div>
-    <div class="visitors_block"></div>
+    <div class="visitors-block">
+      <div class="buttons-row-flex">
+        <div class="header_button__text">VISITORS</div>
+        <a href="index.html" class="footer__href_text blue_color">VIEW ALL</a>
+      </div>
+      <div class="visitors-profiles">
+        <div class="visitor-profile-block">
+          <img src="images/Photo (2).svg"/>
+          <div class="visitor-profile__text">
+            <h3 class="visitor-profile__name">Darlene Black</h3>
+            HR-manager, 10 000 connec...
+          </div>
+        </div>
+        <div class="visitor-profile-block">
+          <img src="images/Photo (3).svg"/>
+          <div class="visitor-profile__text">
+            <h3 class="visitor-profile__name">Theresa Steward</h3>
+            iOS developer
+          </div>
+        </div>
+        <div class="visitor-profile-block">
+          <img src="Images/Photo (4).svg"/>
+          <div class="visitor-profile__text">
+            <h3 class="visitor-profile__name">Brandon Wilson</h3>
+            Senior UX designer
+          </div>
+        </div>
+        <div class="visitor-profile-block">
+          <img src="Images/Photo (5).svg"/>
+          <div class="visitor-profile__text">
+            <h3 class="visitor-profile__name">Kyle Fisher</h3>
+            Product designer at Com...
+          </div>
+        </div>
+        <div class="visitor-profile-block">
+          <img src="Images/Photo (6).svg"/>
+          <div class="visitor-profile__text">
+            <h3 class="visitor-profile__name">Audrey Alexander</h3>
+            Team lead at Google
+          </div>
+        </div>
+        </div>
+    </div>
+    <div class="courses">
+      <div class="courses_header header_button__text">YOU MAY LIKE THESE COURSES</div>
+      <div class="courses-list">
+        <div class="course">
+          <div class="course-screen">
+            <img src="images/Photo (7).svg" class="course-screen__image"/>
+            <img src="images/play.svg" class="course-screen__play"/>
+          </div>
+          <div class="course-description">
+            <h3 class="course__name">UX Foundations: Prototyping</h3>
+            <div class="course__viewers">27,959 viewers</div>
+          </div>
+        </div>
+        <div class="course">
+          <div class="course-screen">
+            <img src="images/Photo (8).svg" class="course-screen__image"/>
+            <img src="images/play.svg" class="course-screen__play"/>
+          </div>
+          <div class="course-description">
+            <h3 class="course__name">Designing with Adobe XD and pro</h3>
+            <div class="course__viewers">9,122 viewers</div>
+          </div>
+        </div>
+        <div class="course">
+          <div class="course-screen">
+            <img src="images/Photo (9).svg" class="course-screen__image" />
+            <img src="images/play.svg" class="course-screen__play"/>
+          </div>
+          <div class="course-description">
+            <h3 class="course__name">UX Foundations: Styles and GUIs</h3>
+            <div class="course__viewers">13,858 viewers</div>
+          </div>
+        </div>
+      </div>
+      <a href="" class="footer__href_text blue_color">SEE ALL RECOMENDATIONS</a>
+    </div>
   </div>
 </div>
 <div class="footer">
@@ -142,7 +246,7 @@
       </button>
     </div>
     <div class="column column_margin-left_60">
-      <div class="footer_column_header black_color header_button__text">Fast access</div>
+      <div class="footer_column_header black_color header_button__text">Language</div>
       <select class="footer__language_select">
         <option>ENGLISH</option>
         <option>RUSSIAN</option>

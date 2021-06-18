@@ -35,22 +35,27 @@ body {
     width: 100%;
     height: 80px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     position: fixed;
     background: #FFFFFF;
 }
 
 .main{
-    background: #E5E5E5;
+    background: #f7f9fb;;
     display: flex;
     padding-top:120px;
     padding-bottom: 40px;
     padding-left: 130px;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .footer{
-    background: #F7F9FB;
+    background: linear-gradient(
+            180deg,
+            rgba(241, 244, 248, 0.8) 0%,
+            rgba(241, 244, 248, 0) 100%
+    );
+    border-top: 1px solid #e7e7e7;
     width: 100%;
     padding-left: 130px;
     padding-top: 30px;
@@ -280,26 +285,11 @@ body {
     padding-right: 15px;
 }
 
-.dashboard_block{
-    background: #FFFFFF;
-    height: 360px;
-    margin-bottom: 20px;
-    padding-left: 30px;
-    /*padding: 25px 30px 30px;*/
-}
-
-.visitors_block{
-    background: #FFFFFF;
-    height: 427px;
-    margin-bottom: 20px;
-}
-
 .main-profile__block{
     padding: 20px 30px 30px 25px;
     background-color: #FFF;
     background-image: url(images/profile_background.svg);
     background-repeat: no-repeat;
-    height: 360px;
 }
 
 .profile_background_image{
@@ -310,7 +300,6 @@ body {
 .main-profile__avatar{
     height: 170px;
     width: 170px;
-    margin-left: 25px;
 }
 
 .main-profile__top-buttons {
@@ -375,12 +364,142 @@ body {
     background: #e5e5e5;
 }
 
-.dashboard__row-flex{
+.main-profile__bottom-block {
+    display: flex;
+    height: 170px;
+    justify-content: space-between;
+    margin-top: 104px;
+}
+
+.profile-information {
+    width: 600px;
+}
+
+.profile-information__top-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 45px;
+}
+
+.profile-information__top-left {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-information__top-name {
+    font-family: Gotham Pro;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 17px;
+    margin-right: 8px;
+    color: #181818;
+}
+
+.profile-information__top-logo {
+    height: 16px;
+    width: 16px;
+}
+
+.profile-information__top-right {
+    display: flex;
+}
+
+.profile-information__top-location-img {
+    height: 16px;
+    margin-right: 8px;
+    width: 16px;
+}
+
+.profile-information__top-location {
+    font-family: "Gotham Pro";
+    font-size: 12px;
+    line-height: 150%;
+    color: #181818;
+}
+
+.profile-information__description {
+    font-family: Gotham Pro;
+    font-size: 14px;
+    line-height: 150%;
+    margin-bottom: 14px;
+    margin-top: 13px;
+    color: #181818;
+    width: 583px;
+}
+
+.profile-information__options {
+    display: flex;
+}
+
+.profile-information__options-info {
+    background: #ffffff;
+    border: 1px solid #0275b1;
+    box-sizing: border-box;
+    border-radius: 4px;
+    width: 170px;
+    margin-right: 15px;
+    height: 32px;
+    font-family: "Gotham Pro";
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 11px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #0275b1;
+}
+
+.profile-information__options-info:hover {
+    background: linear-gradient(180deg, #0077b5 0%, #0e6795 100%);
+    color: #ffffff;
+}
+
+.profile-information__connections {
+    background: #ffffff;
+    border: 1px solid #0275b1;
+    box-sizing: border-box;
+    border-radius: 4px;
+    width: 170px;
+    height: 32px;
+    font-family: "Gotham Pro";
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 11px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #0275b1;
+}
+
+.profile-information__connections:hover {
+    background: linear-gradient(180deg, #0077b5 0%, #0e6795 100%);
+    color: #ffffff;
+}
+
+.dashboard_block{
+    box-sizing: border-box;
+    background: #FFFFFF;
+    height: 360px;
+    margin-bottom: 20px;
+    padding-left: 30px;
+    padding-top: 25px;
+    padding-right: 30px;
+}
+
+.buttons-row-flex{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-top: 25px;
-    padding-right: 30px;
+}
+
+.statistic {
+    border-top: 1px solid #f4f4f4;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 294px;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 .dashboard__number{
@@ -389,4 +508,126 @@ body {
     line-height: 50px;
     color: #0275B1;
     font-weight: normal;
+}
+
+.dashboard__text{
+    font-family: "Gotham Pro";
+    font-size: 14px;
+    line-height: 21px;
+    color: #181818;
+    margin-bottom: 20px;
+}
+
+.visitors-block{
+    background: #FFFFFF;
+    padding: 25px 30px;
+    margin-bottom: 20px;
+}
+
+.visitors-profiles {
+    border-top: 1px solid #f4f4f4;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 341px;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.visitor-profile-block {
+    display: flex;
+    height: 52px;
+}
+
+.visitor-profile__text {
+    color: #181818;
+    font-size: 10px;
+    line-height: 15px;
+    margin-left: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.visitor-profile__name {
+    color: #181818;
+    font-size: 14px;
+    line-height: 13px;
+    margin-bottom: 5px;
+    margin-top: 12px;
+}
+
+.courses {
+    background-color: #fff;
+    box-sizing: border-box;
+    height: 338px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 25px;
+}
+
+.courses-list {
+    border-top: 1px solid #f4f4f4;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 219px;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    padding-top: 20px;
+    width: 228px;
+}
+
+.course {
+    display: flex;
+    height: 56px;
+    justify-content: space-between;
+    width: 228px;
+}
+
+.course-screen {
+    height: 52px;
+    margin-right: 15px;
+    position: relative;
+    width: 80px;
+}
+
+.course-screen__image {
+    height: 52px;
+    width: 80px;
+}
+
+.course-screen__play {
+    display: block;
+    left: 31px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.course-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.course__name {
+    color: #181818;
+    font-size: 14px;
+    height: 36px;
+    line-height: 17px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.course__viewers {
+    color: #181818;
+    font-size: 10px;
+    line-height: 15px;
+}
+
+.courses_header {
+    margin-bottom: 20px;
+    text-align: left;
+    text-transform: uppercase;
 }
