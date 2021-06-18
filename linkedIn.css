@@ -32,6 +32,7 @@ body {
 
 
 .header{
+    font-family: "Gotham Pro";
     width: 100%;
     height: 80px;
     display: flex;
@@ -41,6 +42,7 @@ body {
 }
 
 .main{
+    font-family: "Gotham Pro";
     background: #f7f9fb;;
     display: flex;
     padding-top:120px;
@@ -50,8 +52,8 @@ body {
 }
 
 .footer{
-    background: linear-gradient(
-            180deg,
+    font-family: "Gotham Pro";
+    background: linear-gradient(180deg,
             rgba(241, 244, 248, 0.8) 0%,
             rgba(241, 244, 248, 0) 100%
     );
@@ -120,13 +122,11 @@ body {
 .search_placeholder{
     border: none;
     font-size: 16px;
-    font-family: "Gotham Pro";
     font-weight:400;
     color: #CECECE;
 }
 
 .header_button__text{
-    font-family: "Gotham Pro";
     font-size: 12px;
     text-align: center;
     line-height: 11px;
@@ -197,7 +197,6 @@ body {
     height:32px;
     text-transform: uppercase;
     font-size: 12px;
-    font-family: "Gotham Pro";
     font-weight: bolder;
     margin-bottom:10px;
     border-width: 1px;
@@ -261,8 +260,7 @@ body {
     margin-left: 60px;
 }
 
-.footer__href_text {
-    font-family: "Gotham Pro";
+.href_text {
     font-size: 12px;
     text-align: start;
     line-height: 11px;
@@ -290,6 +288,7 @@ body {
     background-color: #FFF;
     background-image: url(images/profile_background.svg);
     background-repeat: no-repeat;
+    margin-bottom: 31px;
 }
 
 .profile_background_image{
@@ -307,7 +306,6 @@ body {
     height: 36px;
     justify-content: space-between;
 }
-
 
 .upload-button {
     background: rgba(255, 255, 255, 0.9);
@@ -339,7 +337,6 @@ body {
     height: 36px;
     background: rgba(255, 255, 255, 0.9);
     border: none;
-    font-family: "Gotham Pro";
     font-size: 12px;
     line-height: 11px;
     text-align: center;
@@ -388,7 +385,6 @@ body {
 }
 
 .profile-information__top-name {
-    font-family: Gotham Pro;
     font-size: 18px;
     font-weight: 700;
     line-height: 17px;
@@ -412,14 +408,12 @@ body {
 }
 
 .profile-information__top-location {
-    font-family: "Gotham Pro";
     font-size: 12px;
     line-height: 150%;
     color: #181818;
 }
 
 .profile-information__description {
-    font-family: Gotham Pro;
     font-size: 14px;
     line-height: 150%;
     margin-bottom: 14px;
@@ -440,7 +434,6 @@ body {
     width: 170px;
     margin-right: 15px;
     height: 32px;
-    font-family: "Gotham Pro";
     font-size: 12px;
     font-weight: 700;
     line-height: 11px;
@@ -461,7 +454,6 @@ body {
     border-radius: 4px;
     width: 170px;
     height: 32px;
-    font-family: "Gotham Pro";
     font-size: 12px;
     font-weight: 700;
     line-height: 11px;
@@ -491,8 +483,7 @@ body {
     justify-content: space-between;
 }
 
-.statistic {
-    border-top: 1px solid #f4f4f4;
+.statistic-block {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -503,7 +494,6 @@ body {
 }
 
 .dashboard__number{
-    font-family: "Gotham Pro";
     font-size: 52px;
     line-height: 50px;
     color: #0275B1;
@@ -511,7 +501,6 @@ body {
 }
 
 .dashboard__text{
-    font-family: "Gotham Pro";
     font-size: 14px;
     line-height: 21px;
     color: #181818;
@@ -525,7 +514,6 @@ body {
 }
 
 .visitors-profiles {
-    border-top: 1px solid #f4f4f4;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -557,8 +545,8 @@ body {
     margin-top: 12px;
 }
 
-.courses {
-    background-color: #fff;
+.courses-block {
+    background-color: #ffffffff;
     box-sizing: border-box;
     height: 338px;
     padding-left: 30px;
@@ -567,7 +555,6 @@ body {
 }
 
 .courses-list {
-    border-top: 1px solid #f4f4f4;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -578,7 +565,7 @@ body {
     width: 228px;
 }
 
-.course {
+.course-block {
     display: flex;
     height: 56px;
     justify-content: space-between;
@@ -630,4 +617,335 @@ body {
     margin-bottom: 20px;
     text-align: left;
     text-transform: uppercase;
+}
+
+.tabs-block {
+    height: 61px;
+    display: flex;
+    justify-content: left;
+    margin-bottom: 30px;
+}
+
+.tabs__button-block {
+    width: 240px;
+    height: 51px;
+    position: relative;
+}
+
+.tab-button {
+    position: absolute;
+    bottom: 0px;
+    width: 240px;
+    height: 40px;
+    background-color: #ffffffff;
+    border: 1px solid #e7e7e7;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 11px;
+    text-transform: uppercase;
+    color: #181818;
+}
+
+.tab-button_profile {
+    background: linear-gradient(180deg, #0077b5 0%, #0e6795 100%);
+    border-radius: 4px 4px 0px 0px;
+    color: #fff;
+    height: 50px;
+}
+
+.round-border {
+    border-radius: 0px 10px 0px 0px;
+}
+
+.about-block {
+    background-color: #ffffff;
+    box-sizing: border-box;
+    height: 170px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+}
+
+.about__title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 17px;
+    margin: 0px;
+}
+
+.about__text {
+    font-size: 14px;
+    height: 42px;
+    line-height: 21px;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.projects-block {
+    background-color: #ffffff;
+    padding-left: 30px;
+    padding-top: 30px;
+    padding-bottom: 31px;
+}
+
+.projects__title-container {
+    display: flex;
+    height: 17px;
+    justify-content: space-between;
+    width: 148px;
+}
+
+.projects__title {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 17px;
+}
+
+.projects__numbers {
+    color: #747474;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 17px;
+}
+
+.projects__list {
+    display: flex;
+    height: 216px;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    width: 790px;
+}
+
+.projects__item {
+    width: 250px;
+}
+
+.projects__item-image {
+    display: block;
+    height: 160px;
+    margin-bottom: 15px;
+    width: 250px;
+}
+
+.projects__item-header {
+    display: block;
+    color: #181818;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+    margin-bottom: 5px;
+}
+
+.projects__item-description {
+    display: block;
+    font-size: 10px;
+    line-height: 15px;
+}
+
+.skills-block {
+    background-color: #ffffff;
+    box-sizing: border-box;
+    height: 220px;
+    padding-left: 30px;
+    padding-top: 30px;
+}
+
+.skills__title {
+    display: block;
+    color: #181818;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 17px;
+    margin-bottom: 24px;
+}
+
+.skills__list {
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    width: 790px;
+}
+
+.skills__item {
+    background: #ffffff;
+    border: none;
+    border-radius: 6px;
+    box-sizing: border-box;
+    height: 80px;
+    padding-top: 14px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 250px;
+}
+
+.skills__header {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+    margin-bottom: 5px;
+}
+
+.users-image {
+    height: 24px;
+    width: 99px;
+}
+
+.experience-block {
+    background-color: #ffffff;
+    box-sizing: border-box;
+    height: 345px;
+    padding-left: 30px;
+    padding-top: 30px;
+    padding-right: 30px;
+}
+
+.experience__title {
+    display: block;
+    color: #181818;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 17px;
+    margin-bottom: 5px;
+}
+
+.experience-item {
+    display: flex;
+    height: 126px;
+    width: 790px;
+}
+
+.experience-item__image {
+    height: 54px;
+    width: 54px;
+    margin-top: 22px;
+}
+
+.experience-description {
+    margin-left: 16px;
+    margin-top: 20px;
+}
+
+.experience-content__title {
+    color: #181818;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+    margin-bottom: 10px;
+}
+
+.experience-company {
+    display: flex;
+    font-size: 10px;
+    line-height: 15px;
+    margin-bottom: 5px;
+    color: #181818;
+}
+
+.experience-company__name {
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.experience-duration {
+    display: flex;
+    font-size: 10px;
+    line-height: 15px;
+    margin-bottom: 10px;
+    color: #181818;
+}
+
+.expericence-duration__total {
+    color: #0275b1;
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+.experience-about {
+    font-size: 10px;
+    line-height: 15px;
+    color: #181818;
+}
+
+.margin-bottom-25 {
+    margin-bottom: 25px;
+}
+
+.border-top {
+    border-top: 1px solid #f4f4f4;
+}
+
+.education {
+    background-color: #ffffff;
+    box-sizing: border-box;
+    height: 195px;
+    padding-left: 30px;
+    padding-top: 30px;
+    padding-right: 30px;
+}
+
+.education__title {
+    color: #181818;
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 17px;
+    margin-bottom: 25px;
+}
+
+.education-content {
+    display: flex;
+    height: 91px;
+    justify-content: space-between;
+    width: 571px;
+}
+
+.education__image {
+    border-radius: 27px;
+    height: 54px;
+    margin-top: 2px;
+    width: 54px;
+}
+
+.education-description {
+    width: 501px;
+}
+
+.education-description__university-name {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    color: #181818;
+    margin-bottom: 10px;
+}
+
+.education-description__degree {
+    font-size: 10px;
+    line-height: 15px;
+    color: #181818;
+    margin-bottom: 5px;
+}
+
+.education-description__years {
+    font-size: 10px;
+    line-height: 15px;
+    color: #181818;
+    margin-bottom: 10px;
+}
+
+.education-description__add-courses {
+    font-size: 10px;
+    line-height: 15px;
+    color: #181818;
+}
+
+.margin-bottom_20 {
+    margin-bottom: 20px;
 }
