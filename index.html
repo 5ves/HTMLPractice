@@ -8,83 +8,100 @@
 <body>
 <div class="header">
   <div class="top_corner_logo">
-    <div id="logo" class="logo_image" style="margin: auto"></div>
+    <div class="logo_image" style="margin: auto"></div>
   </div>
-  <button id="feed_button" class="header_button">
-    <div id="feed_icon" class="header_button_icon_container">
-      <img src="images/feed_icon.svg" class="header_button_icon">
+  <button id="feed_button" class="header-button">
+    <div id="feed_icon" class="header_button__icon_container">
+      <img src="images/feed_icon.svg" class="header-button__icon">
     </div>
-    <div id="feed_text" class="header_button_text header_text_style">
+    <div id="feed_text" class="header_button__text header-text_style">
       FEED
     </div>
   </button>
-  <button id="network_button" class="header_button">
-    <div id="network_icon" class="header_button_icon_container">
-      <img src="images/network_icon.svg" class="header_button_icon">
+  <button id="network_button" class="header-button">
+    <div id="network_icon" class="header_button__icon_container">
+      <img src="images/network_icon.svg" class="header-button__icon">
     </div>
-    <div id="network_text" class="header_button_text header_text_style">
+    <div id="network_text" class="header_button__text header-text_style">
       NETWORK
     </div>
   </button>
-  <button id="jobs_button" class="header_button">
-    <div id="jobs_icon" class="header_button_icon_container">
-      <img src="images/jobs_icon.svg" class="header_button_icon">
+  <button id="jobs_button" class="header-button">
+    <div id="jobs_icon" class="header_button__icon_container">
+      <img src="images/jobs_icon.svg" class="header-button__icon">
     </div>
-    <div id="jobs_text" class="header_button_text header_text_style">
+    <div id="jobs_text" class="header_button__text header-text_style">
       JOBS
     </div>
   </button>
-  <button id="chat_button" class="header_button">
-    <div id="chat_icon" class="header_button_icon_container">
-      <img src="images/chat_icon.svg" class="header_button_icon">
+  <button id="chat_button" class="header-button">
+    <div id="chat_icon" class="header_button__icon_container">
+      <img src="images/chat_icon.svg" class="header-button__icon">
     </div>
-    <div id="chat_text" class="header_button_text header_text_style">
+    <div id="chat_text" class="header_button__text header-text_style">
       CHAT
     </div>
   </button>
-  <button id="notices_button" class="header_button">
-    <div id="notices_icon" class="header_button_icon_container">
-      <img src="images/notices_icon.svg" class="header_button_icon">
+  <button id="notices_button" class="header-button">
+    <div id="notices_icon" class="header_button__icon_container">
+      <img src="images/notices_icon.svg" class="header-button__icon">
     </div>
-    <div id="notices_text" class="header_button_text header_text_style">
+    <div id="notices_text" class="header_button__text header-text_style">
       NOTICES
     </div>
   </button>
-  <div id="search_text_field" class="search_block">
+  <div class="search_block">
     <img src="images/search.svg" class="search_icon">
     <input type="search" placeholder="Search" class="search_placeholder">
   </div>
   <div id="header_profile" class="profile_block">
-    <img src="images/header_avatar.svg" class="profile_avatar">
+    <img src="images/avatar.svg" class="profile_avatar">
     <div id="profile_description">
       <div class="header_text_row">
-        <div id="header_name" class="header_button_text header_text_style profile_name">D.KARGAEV</div>
-        <div id="you" class="header_button_text lightgray_color">YOU</div>
+        <div id="header_name" class="header_button__text header-text_style profile_name">D.KARGAEV</div>
+        <div id="you" class="header_button__text lightgray_color">YOU</div>
       </div>
       <div class="header_text_row">
-        <div id="header_stat" class="header_button_text stat_text_color">367 views today</div>
-        <div id="header_stat_numbers" class="header_button_text green_color">+32</div>
+        <div id="header_stat" class="header_button__text stat_text_color">367 views today</div>
+        <div id="header_stat_numbers" class="header_button__text green_color">+32</div>
         <img src="images/arrow-up-right.svg" style="width: 12px; height: 12px;">
       </div>
     </div>
   </div>
-  <button id="other_button" class="header_button">
-    <div id="other_icon" class="header_button_icon_container">
-      <img src="images/other_icon.svg" class="header_button_icon">
+  <button id="other_button" class="header-button">
+    <div id="other_icon" class="header_button__icon_container">
+      <img src="images/other_icon.svg" class="header-button__icon">
     </div>
-    <div id="other_text" class="header_button_text header_text_style">
+    <div id="other_text" class="header_button__text header-text_style">
       OTHER
     </div>
   </button>
 </div>
 <div class="main">
-  <div class="left_main">
-    <div class = "main_profile_block">
-      <img src="images/profile_background.svg" class="profile_background_image">
+  <div class="main__left">
+    <div class = "main-profile__block">
+      <div class = "main-profile__top-buttons">
+        <button class="upload-button">
+          <img src="images/upload.svg" class="upload-button__image">
+        </button>
+        <div class = "main-profile__top-buttons__right">
+          <button class = "edit-button">Edit profile</button>
+          <button class = "options-button">
+            <img src="images/more-horizontal.svg" class="upload-button__image">
+          </button>
+        </div>
+      </div>
+      <img src="images/avatar.svg" class="main-profile__avatar">
     </div>
   </div>
-  <div class="right_main">
-    <div class="dashboard_block"></div>
+  <div class="main__right">
+    <div class="dashboard_block">
+      <div class="dashboard__row-flex">
+        <div class="header_button__text">YOUR DASHBOARD</div>
+        <a href="index.html" class="footer__href_text blue_color">GO TO STATS</a>
+      </div>
+      <div class="dashboard__number">367</div>
+    </div>
     <div class="visitors_block"></div>
   </div>
 </div>
@@ -93,28 +110,28 @@
       <div id="logo_footer" class="logo_image"></div>
       <img src="images/LinkedIn.svg" style="height: 21px; width: 61px; margin-top: 12px">
     </div>
-    <div class="column column_1">
-      <div class="footer_column_header black_color header_button_text">Navigation</div>
-      <a href="index.html" class="footer_href_text black_color">About</a>
-      <a href="index.html" class="footer_href_text black_color">Careers</a>
-      <a href="index.html" class="footer_href_text black_color">Advertising</a>
-      <a href="index.html" class="footer_href_text black_color">Small Business</a>
+    <div class="column column_margin-left_69">
+      <div class="footer_column_header black_color header_button__text">Navigation</div>
+      <a href="index.html" class="footer__href_text black_color">About</a>
+      <a href="index.html" class="footer__href_text black_color">Careers</a>
+      <a href="index.html" class="footer__href_text black_color">Advertising</a>
+      <a href="index.html" class="footer__href_text black_color">Small Business</a>
     </div>
-    <div class="column column_2">
-      <div class="footer_column_header black_color header_button_text invisible_header">.</div>
-      <a href="index.html" class="footer_href_text black_color">Talent Solutions</a>
-      <a href="index.html" class="footer_href_text black_color">Marketing Solutions</a>
-      <a href="index.html" class="footer_href_text black_color">Sales Solutions</a>
-      <a href="index.html" class="footer_href_text black_color">Safety Center</a>
+    <div class="column column_margin-left_35">
+      <div class="footer_column_header black_color header_button__text invisible_header">.</div>
+      <a href="index.html" class="footer__href_text black_color">Talent Solutions</a>
+      <a href="index.html" class="footer__href_text black_color">Marketing Solutions</a>
+      <a href="index.html" class="footer__href_text black_color">Sales Solutions</a>
+      <a href="index.html" class="footer__href_text black_color">Safety Center</a>
     </div>
-    <div class="column column_3">
-      <div class="footer_column_header black_color header_button_text invisible_header">.</div>
-      <a href="index.html" class="footer_href_text black_color">Community Guidelines</a>
-      <a href="index.html" class="footer_href_text black_color">Privacy & Terms</a>
-      <a href="index.html" class="footer_href_text black_color">Mobile App</a>
+    <div class="column column_margin-left_45">
+      <div class="footer_column_header black_color header_button__text invisible_header">.</div>
+      <a href="index.html" class="footer__href_text black_color">Community Guidelines</a>
+      <a href="index.html" class="footer__href_text black_color">Privacy & Terms</a>
+      <a href="index.html" class="footer__href_text black_color">Mobile App</a>
     </div>
-    <div class="column column_4">
-      <div class="footer_column_header black_color header_button_text">Fast access</div>
+    <div class="column column_margn-left_65">
+      <div class="footer_column_header black_color header_button__text">Fast access</div>
       <button class="footer_button blue_button">
         <span>QUESTIONS?</span>
         <img src="images/help-circle.svg">
@@ -124,9 +141,9 @@
         <img src="images/settings.svg">
       </button>
     </div>
-    <div class="column column_5">
-      <div class="footer_column_header black_color header_button_text">Fast access</div>
-      <select class="footer_language_select">
+    <div class="column column_margin-left_60">
+      <div class="footer_column_header black_color header_button__text">Fast access</div>
+      <select class="footer__language_select">
         <option>ENGLISH</option>
         <option>RUSSIAN</option>
         <option>LATIN</option>
