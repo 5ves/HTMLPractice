@@ -27,7 +27,7 @@ function Group(props) {
 
 function Hashtag(props) {
     return (
-        <div className="hashtag font-size_12" key={props.text}>
+        <div className="hashtag font-size_12">
             {"#" + props.text}
         </div>
     );
@@ -35,7 +35,7 @@ function Hashtag(props) {
 
 function Article(props) {
     return (
-        <div className="article" key={props.title}>
+        <div className="article">
             <img src={props.src} className="article__image cursor-pointer" alt=""/>
             <div className="feed_column">
                 <span className="font-size_14 font-weight_bold margin-bottom_5 cursor-pointer">{props.title}</span>

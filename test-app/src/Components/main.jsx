@@ -26,16 +26,16 @@ import Post from "./post";
 import {ColoredLine, Article, Hashtag, Group} from "./components"
 
 const GroupsList = [
-          {name: "Moscow State Linguistical University", src: group_1},
-          {name: "Digital freelancers group", src: group_2},
-          {name: "Interaction design association", src: group_3},
+          {name: "Moscow State Linguistical University", src: group_1, key:"group_1"},
+          {name: "Digital freelancers group", src: group_2, key:"group_2"},
+          {name: "Interaction design association", src: group_3, key:"group_3"},
       ],
       HastagsList = ["work", "business", "hr", "userinterface", "digital", "userexperience", "ux", "ui", "freelance"],
 
       ArticlesList = [
-          {src: article_1, title: "How I make cool designs?", viewers: "6,340"},
-          {src: article_2, title: "Advices for young HR-manage", viewers: "6,340"},
-          {src: article_3, title: "A little about usability testing", viewers: "6,340"}
+          {src: article_1, title: "How I make cool designs?", viewers: "6,340", key:"article_1"},
+          {src: article_2, title: "Advices for young HR-manage", viewers: "6,340", key:"article_2"},
+          {src: article_3, title: "A little about usability testing", viewers: "6,340", key:"article_3"}
       ],
 
       Posts = [
@@ -173,7 +173,7 @@ function Main() {
                         <a href="../../../index.html" className="href_text blue_color uppercase">edit list</a>
                     </div>
                     <div className="groups_list border-top">
-                        {GroupsList.map((item) => <Group name= {item.name} src={item.src}/>)}
+                        {GroupsList.map((item) => <Group name= {item.name} src={item.src} key={item.key}/>)}
                     </div>
                     <a href="" className="href_text blue_color uppercase">show all(8)</a>
                 </div>
@@ -181,14 +181,14 @@ function Main() {
                 <div className="features__block">
                     <div className="font-size_12 text-align_left uppercase margin-bottom_20">Followed hashtags</div>
                     <div className="hashtags__list border-top">
-                        {HastagsList.map((item, index) => <Hashtag text={item}/>)}
+                        {HastagsList.map((item, index) => <Hashtag text={item} key={item}/>)}
                     </div>
                 </div>
 
                 <div className="features__block">
                     <div className="font-size_12 text-align_left uppercase margin-bottom_20">Trending articles</div>
                     <div className="groups_list border-top">
-                        {ArticlesList.map((item) => <Article src={item.src} title={item.title} viewers={item.viewers}/>)}
+                        {ArticlesList.map((item) => <Article src={item.src} title={item.title} viewers={item.viewers} key={item.key}/>)}
                     </div>
                 </div>
 

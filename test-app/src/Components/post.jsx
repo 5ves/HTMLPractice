@@ -11,19 +11,22 @@ import {PostFile, PostText} from "./components";
 function Post(props) {
     return (<div className="post__block">
         <PostHeader
+            key={props.header_text}
             text={props.header_text}
             hrefs={props.header_hrefs}
         />
         <PostAuthor
+            key={props.author_name}
             avatar_src={props.avatar_src}
             author_name={props.author_name}
             author_status={props.author_status}
         />
-        <PostText text={props.post_text}/>
+        <PostText key={props.post_text} text={props.post_text}/>
 
-        {props.images.map((object) => <img className="margin-bottom_15 margin-left_30" src={object}/>)}
+        {props.images.map((object) => <img className="margin-bottom_15 margin-left_30" src={object} alt=""/>)}
 
-        {props.files.map((file) => <PostFile name={file.name}
+        {props.files.map((file) => <PostFile key={file.name}
+                                             name={file.name}
                                              size={file.size}
                                              file={file.file}
                                              download={file.download}
