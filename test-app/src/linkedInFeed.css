@@ -398,3 +398,19 @@
     background-repeat: no-repeat;
     background-image: url(./images/message-circle_filled.png);
 }
+
+.gradient_text {
+    width: 790px;
+    position: relative;
+}
+
+.gradient_text:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 -90px 60px -70px rgba(255, 255, 255, 0.94);
+
+}

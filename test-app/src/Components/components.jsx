@@ -69,7 +69,7 @@ function PostText(props) {
     } else if (props.text && props.text.length >= 301) {
         return (
             <div className="feed_column margin-left_30">
-                <span className="post_text margin-bottom_15">{" " + props.text}</span>
+                <span className="post_text margin-bottom_15 gradient_text">{" " + props.text}</span>
                 <a href="../../../index.html" className="href_text blue_color uppercase">read more</a>
             </div>
         );
