@@ -17,7 +17,7 @@ function Header() {
             <div className="header-logo">
                 <div className="logo_image"/>
             </div>
-            {ButtonsBar.map((item) => <HeaderButton classes={item.classes} title={item.title}/>)}
+            {ButtonsBar.map((item) => <HeaderButton classes={item.classes} title={item.title} key={item.title}/>)}
             <div className="search_block">
                 <span className="icon icon-search search_icon"/>
                 <input className="search_placeholder" type="search" placeholder="Search"/>

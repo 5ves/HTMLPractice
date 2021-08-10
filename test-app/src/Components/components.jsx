@@ -4,6 +4,7 @@ import thumbs_up_filled from "../images/thumbs-up_filled.png";
 import thumbs_up from "../images/thumbs-up.png";
 import messages_filled from "../images/message-circle_filled.png";
 import messages from "../images/message-circle.png";
+import {useState} from "react";
 
 const ColoredLine = ({ color }) => (
     <hr
@@ -95,18 +96,29 @@ function PostFile(props) {
 }
 
 function ThumbsUp(props) {
-    if (props.checked) {
+    const [checked, setChecked] = useState(props.checked),
+          [amount, setAmount] = useState(props.amount);
+
+    function handleClick() {
+        setChecked(!checked);
+        if (!checked) {
+            setAmount(amount + 1);
+        } else {
+            setAmount(amount - 1);
+        }
+    }
+    if (checked) {
         return (
-            <div className="post-buttons__button cursor-pointer">
-                <img src={thumbs_up_filled} className="post-buttons__icon" alt=""/>
+            <div className="post-buttons__button cursor-pointer" onClick={handleClick}>
+                <div className="post__thumbsup-filled"/>
                 <span>&nbsp;</span>
-                <span className="font-size_12">{props.amount}</span>
+                <span className="font-size_12">{amount}</span>
             </div>
         );
     } else {
         return (
-            <div className="post-buttons__button cursor-pointer">
-                <img src={thumbs_up} className="post-buttons__icon" alt=""/>
+            <div className="post-buttons__button cursor-pointer" onClick={handleClick}>
+                <div className="post__thumbsup"/>
                 <span>&nbsp;</span>
                 <span className="font-size_12">{props.amount}</span>
             </div>
@@ -115,18 +127,22 @@ function ThumbsUp(props) {
 }
 
 function Messages(props) {
-    if (props.checked) {
+    const [checked, setChecked] = useState(props.checked);
+    function handleClick() {
+        setChecked(!checked);
+    }
+    if (checked) {
         return (
-            <div className="post-buttons__button cursor-pointer">
-                <img src={messages_filled} className="post-buttons__icon" alt=""/>
+            <div className="post-buttons__button cursor-pointer" onClick={handleClick}>
+                <div className="post__messages-filled"/>
                 <span>&nbsp;</span>
                 <span className="font-size_12">{props.amount}</span>
             </div>
         );
     } else {
         return (
-            <div className="post-buttons__button cursor-pointer">
-                <img src={messages} className="post-buttons__icon" alt=""/>
+            <div className="post-buttons__button cursor-pointer" onClick={handleClick}>
+                <div className="post__messages"/>
                 <span>&nbsp;</span>
                 <span className="font-size_12">{props.amount}</span>
             </div>

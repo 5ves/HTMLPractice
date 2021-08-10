@@ -366,3 +366,35 @@
 .article__image {
     margin-right: 15px;
 }
+
+.post__thumbsup {
+    width: 14px;
+    height: 14px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(./images/thumbs-up.png);
+}
+
+.post__thumbsup-filled {
+    width: 14px;
+    height: 14px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(./images/thumbs-up_filled.png);
+}
+
+.post__messages {
+    width: 14px;
+    height: 14px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(./images/message-circle.png);
+}
+
+.post__messages-filled {
+    width: 14px;
+    height: 14px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(./images/message-circle_filled.png);
+}

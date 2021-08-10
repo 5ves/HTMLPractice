@@ -40,6 +40,7 @@ const GroupsList = [
 
       Posts = [
           {
+              key: "post_1",
               header_text: "Ted Bell, Annette Nguyen and Cody Hawkins liked this",
               header_hrefs: ["Ted", "Bell", "Annette", "Nguyen", "Cody", "Hawkins"],
               avatar_src: avatar_1,
@@ -54,6 +55,7 @@ const GroupsList = [
               messages_amount: 9,
           },
           {
+              key: "post_2",
               header_text: "Audrey Alexander comment this",
               header_hrefs: ["Audrey", "Alexander"],
               avatar_src: avatar_2,
@@ -68,6 +70,7 @@ const GroupsList = [
               messages_amount: 3,
           },
           {
+              key: "post_3",
               header_text: "High rated post from your feed",
               header_hrefs: [],
               avatar_src: avatar_3,
@@ -90,6 +93,7 @@ const GroupsList = [
               messages_amount: 7,
           },
           {
+              key: "post_4",
               header_text: "First post from Audrey Alexander",
               header_hrefs: ["Audrey", "Alexander"],
               avatar_src: avatar_4,
@@ -132,7 +136,8 @@ function Main() {
                 </div>
 
                 {Posts.map((item) => {
-                    return <Post header_text={item.header_text}
+                    return <Post key = {item.key}
+                                 header_text={item.header_text}
                                  header_hrefs={item.header_hrefs}
                                  avatar_src={item.avatar_src}
                                  author_name={item.author_name}
