@@ -1,0 +1,6 @@
+
+*.json
+test-app/node_modules/.cache/.eslintcache
+test-app/node_modules/.cache/.eslintcache
+test-app/.idea/vcs.xml
+test-app/.idea/workspace.xml
