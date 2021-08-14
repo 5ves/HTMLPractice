@@ -7,8 +7,15 @@ import PostHeader from './post_header';
 import PostAuthor from './post_author';
 import PostButtonsBar from './post_buttons';
 import {PostFile, PostText} from "./components";
+import {useState, useCallback} from "react";
 
 function Post(props) {
+    const
+        thumbsChecked = useState(props.thumbs_checked),
+        thumbsAmount = useState(props.thumbs_amount),
+        messagesChecked = useState(props.messages_checked),
+        messagesAmount = useState(props.messages_amount)
+    ;
     return (<div className="post__block">
         <PostHeader
             key={props.header_text}
@@ -32,10 +39,10 @@ function Post(props) {
                                              download={file.download}
         />)}
 
-        <PostButtonsBar thumbs_checked={props.thumbs_checked}
-                        thumbs_amount={props.thumbs_amount}
-                        messages_checked={props.messages_checked}
-                        messages_amount={props.messages_amount}
+        <PostButtonsBar thumbs_checked={thumbsChecked}
+                        thumbs_amount={thumbsAmount}
+                        messages_checked={messagesChecked}
+                        messages_amount={messagesAmount}
         />
     </div>)
 }

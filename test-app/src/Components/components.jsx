@@ -96,23 +96,22 @@ function PostFile(props) {
 }
 
 function ThumbsUp(props) {
-    const [checked, setChecked] = useState(props.checked),
-          [amount, setAmount] = useState(props.amount);
 
     function handleClick() {
-        setChecked(!checked);
-        if (!checked) {
-            setAmount(amount + 1);
+        props.checked[1](!props.checked[0]);
+        if (!props.checked[0]) {
+            props.amount[1](props.amount[0] + 1);
         } else {
-            setAmount(amount - 1);
+            props.amount[1](props.amount[0] - 1);
         }
     }
-    if (checked) {
+
+    if (props.checked[0]) {
         return (
             <div className="post-buttons__button cursor-pointer" onClick={handleClick}>
                 <div className="post__thumbsup-filled"/>
                 <span>&nbsp;</span>
-                <span className="font-size_12">{amount}</span>
+                <span className="font-size_12">{props.amount[0]}</span>
             </div>
         );
     } else {
@@ -120,23 +119,22 @@ function ThumbsUp(props) {
             <div className="post-buttons__button cursor-pointer" onClick={handleClick}>
                 <div className="post__thumbsup"/>
                 <span>&nbsp;</span>
-                <span className="font-size_12">{amount}</span>
+                <span className="font-size_12">{props.amount[0]}</span>
             </div>
         );
     }
 }
 
 function Messages(props) {
-    const [checked, setChecked] = useState(props.checked);
     function handleClick() {
-        setChecked(!checked);
+        props.checked[1](!props.checked[0]);
     }
-    if (checked) {
+    if (props.checked[0]) {
         return (
             <div className="post-buttons__button cursor-pointer" onClick={handleClick}>
                 <div className="post__messages-filled"/>
                 <span>&nbsp;</span>
-                <span className="font-size_12">{props.amount}</span>
+                <span className="font-size_12">{props.amount[0]}</span>
             </div>
         );
     } else {
@@ -144,7 +142,7 @@ function Messages(props) {
             <div className="post-buttons__button cursor-pointer" onClick={handleClick}>
                 <div className="post__messages"/>
                 <span>&nbsp;</span>
-                <span className="font-size_12">{props.amount}</span>
+                <span className="font-size_12">{props.amount[0]}</span>
             </div>
         );
     }
