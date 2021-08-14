@@ -120,7 +120,7 @@ function ThumbsUp(props) {
             <div className="post-buttons__button cursor-pointer" onClick={handleClick}>
                 <div className="post__thumbsup"/>
                 <span>&nbsp;</span>
-                <span className="font-size_12">{props.amount}</span>
+                <span className="font-size_12">{amount}</span>
             </div>
         );
     }
