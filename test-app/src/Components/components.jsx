@@ -108,7 +108,7 @@ function ThumbsUp(props) {
 
     if (props.checked[0]) {
         return (
-            <div className="post-buttons__button cursor-pointer" onClick={handleClick}>
+            <div className="post-buttons__button cursor-pointer" onClick={props.on_thumbs_up_click}>
                 <div className="post__thumbsup-filled"/>
                 <span>&nbsp;</span>
                 <span className="font-size_12">{props.amount[0]}</span>
@@ -116,7 +116,7 @@ function ThumbsUp(props) {
         );
     } else {
         return (
-            <div className="post-buttons__button cursor-pointer" onClick={handleClick}>
+            <div className="post-buttons__button cursor-pointer" onClick={props.on_thumbs_up_click}>
                 <div className="post__thumbsup"/>
                 <span>&nbsp;</span>
                 <span className="font-size_12">{props.amount[0]}</span>
@@ -131,7 +131,7 @@ function Messages(props) {
     }
     if (props.checked[0]) {
         return (
-            <div className="post-buttons__button cursor-pointer" onClick={handleClick}>
+            <div className="post-buttons__button cursor-pointer" onClick={props.on_messages_click}>
                 <div className="post__messages-filled"/>
                 <span>&nbsp;</span>
                 <span className="font-size_12">{props.amount[0]}</span>
@@ -139,7 +139,7 @@ function Messages(props) {
         );
     } else {
         return (
-            <div className="post-buttons__button cursor-pointer" onClick={handleClick}>
+            <div className="post-buttons__button cursor-pointer" onClick={props.on_messages_click}>
                 <div className="post__messages"/>
                 <span>&nbsp;</span>
                 <span className="font-size_12">{props.amount[0]}</span>

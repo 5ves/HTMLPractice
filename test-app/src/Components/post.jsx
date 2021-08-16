@@ -43,6 +43,8 @@ function Post(props) {
                         thumbs_amount={thumbsAmount}
                         messages_checked={messagesChecked}
                         messages_amount={messagesAmount}
+                        on_thumbs_up_click={props.on_thumbs_up_click}
+                        on_messages_click={props.on_messages_click}
         />
     </div>)
 }

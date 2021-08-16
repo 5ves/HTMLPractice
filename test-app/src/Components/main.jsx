@@ -24,6 +24,7 @@ import article_3 from "../images/article_3.png";
 
 import Post from "./post";
 import {ColoredLine, Article, Hashtag, Group} from "./components"
+import {useCallback} from "react";
 
 const GroupsList = [
           {name: "Moscow State Linguistical University", src: group_1, key:"group_1"},
@@ -37,7 +38,6 @@ const GroupsList = [
           {src: article_2, title: "Advices for young HR-manage", viewers: "6,340", key:"article_2"},
           {src: article_3, title: "A little about usability testing", viewers: "6,340", key:"article_3"}
       ],
-
       Posts = [
           {
               key: "post_1",
@@ -110,6 +110,42 @@ const GroupsList = [
 ];
 
 function Main() {
+
+    const PostsFunc = ({ posts }) => {
+        const onThumbsUpClick = useCallback((post) => {
+            post.thumbs_checked = !post.thumbs_checked;
+            if (!post.thumbs_checked) {
+                post.thumbs_amount++;
+            } else {
+                post.thumbs_amount--;
+            }
+        });
+
+        const onMessagesClick = useCallback((post) => {
+            post.messages_checked = !post.messages_checked;
+        });
+
+        return posts.map((item) => {
+            return <Post key = {item.key}
+                         header_text={item.header_text}
+                         header_hrefs={item.header_hrefs}
+                         avatar_src={item.avatar_src}
+                         author_name={item.author_name}
+                         author_status={item.author_status}
+                         post_text={item.post_text}
+                         images={item.images}
+                         files={item.files}
+                         thumbs_checked={item.thumbs_checked}
+                         thumbs_amount={item.thumbs_amount}
+                         messages_checked={item.messages_checked}
+                         messages_amount={item.messages_amount}
+                         on_thumbs_up_click={onThumbsUpClick}
+                         on_messages_click={onMessagesClick}
+            />
+        })
+
+    }
+
     return (
         <div className="main">
             <div className="main__left">
@@ -135,22 +171,25 @@ function Main() {
                     <ColoredLine color={"rgba(231, 231, 231, 1)"}/>
                 </div>
 
-                {Posts.map((item) => {
-                    return <Post key = {item.key}
-                                 header_text={item.header_text}
-                                 header_hrefs={item.header_hrefs}
-                                 avatar_src={item.avatar_src}
-                                 author_name={item.author_name}
-                                 author_status={item.author_status}
-                                 post_text={item.post_text}
-                                 images={item.images}
-                                 files={item.files}
-                                 thumbs_checked={item.thumbs_checked}
-                                 thumbs_amount={item.thumbs_amount}
-                                 messages_checked={item.messages_checked}
-                                 messages_amount={item.messages_amount}
-                    />
-                })}
+                {/*{Posts.map((item) => {*/}
+                {/*    return <Post key = {item.key}*/}
+                {/*                 header_text={item.header_text}*/}
+                {/*                 header_hrefs={item.header_hrefs}*/}
+                {/*                 avatar_src={item.avatar_src}*/}
+                {/*                 author_name={item.author_name}*/}
+                {/*                 author_status={item.author_status}*/}
+                {/*                 post_text={item.post_text}*/}
+                {/*                 images={item.images}*/}
+                {/*                 files={item.files}*/}
+                {/*                 thumbs_checked={item.thumbs_checked}*/}
+                {/*                 thumbs_amount={item.thumbs_amount}*/}
+                {/*                 messages_checked={item.messages_checked}*/}
+                {/*                 messages_amount={item.messages_amount}*/}
+                {/*    />*/}
+                {/*})}*/}
+
+                {PostsFunc()}
+
             </div>
             <div className="main__right">
                 <div className="feed_profile__block">
