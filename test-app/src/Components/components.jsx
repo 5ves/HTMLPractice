@@ -104,14 +104,21 @@ function ThumbsUp(props) {
         } else {
             props.amount[1](props.amount[0] - 1);
         }
+        if (localStorage.getItem(props.id + "_thumbs_checked") == "true") {
+            localStorage.setItem(props.id + "_thumbs_checked", "false");
+            localStorage.setItem(props.id + "_thumbs_amount", (parseInt(localStorage.getItem(props.id + "_thumbs_amount")) - 1).toString());
+        } else {
+            localStorage.setItem(props.id + "_thumbs_checked", "true");
+            localStorage.setItem(props.id + "_thumbs_amount", (parseInt(localStorage.getItem(props.id + "_thumbs_amount")) + 1).toString());
+        }
     }
 
-    if (props.checked[0]) {
+    if (localStorage.getItem(props.id + "_thumbs_checked") == "true") {
         return (
             <div className="post-buttons__button cursor-pointer" onClick={handleClick}>
                 <div className="post__thumbsup-filled"/>
                 <span>&nbsp;</span>
-                <span className="font-size_12">{props.amount[0]}</span>
+                <span className="font-size_12">{localStorage.getItem(props.id + "_thumbs_amount")}</span>
             </div>
         );
     } else {
@@ -119,7 +126,7 @@ function ThumbsUp(props) {
             <div className="post-buttons__button cursor-pointer" onClick={handleClick}>
                 <div className="post__thumbsup"/>
                 <span>&nbsp;</span>
-                <span className="font-size_12">{props.amount[0]}</span>
+                <span className="font-size_12">{localStorage.getItem(props.id + "_thumbs_amount")}</span>
             </div>
         );
     }

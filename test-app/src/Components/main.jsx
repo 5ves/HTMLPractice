@@ -110,6 +110,26 @@ const GroupsList = [
 ];
 
 function Main() {
+    localStorage.setItem("post_1_thumbs_checked", "false");
+    localStorage.setItem("post_2_thumbs_checked", "true");
+    localStorage.setItem("post_3_thumbs_checked", "true");
+    localStorage.setItem("post_4_thumbs_checked", "false");
+
+    localStorage.setItem("post_1_thumbs_amount", "42");
+    localStorage.setItem("post_2_thumbs_amount", "12");
+    localStorage.setItem("post_3_thumbs_amount", "89");
+    localStorage.setItem("post_4_thumbs_amount", "10");
+
+    localStorage.setItem("post_1_messages_checked", "false");
+    localStorage.setItem("post_2_messages_checked", "false");
+    localStorage.setItem("post_3_messages_checked", "true");
+    localStorage.setItem("post_4_messages_checked", "false");
+
+    localStorage.setItem("post_1_messages_amount", "9");
+    localStorage.setItem("post_2_messages_amount", "3");
+    localStorage.setItem("post_3_messages_amount", "7");
+    localStorage.setItem("post_4_messages_amount", "0");
+
     return (
         <div className="main">
             <div className="main__left">
@@ -137,6 +157,7 @@ function Main() {
 
                 {Posts.map((item) => {
                     return <Post key = {item.key}
+                                 id = {item.key}
                                  header_text={item.header_text}
                                  header_hrefs={item.header_hrefs}
                                  avatar_src={item.avatar_src}

@@ -10,8 +10,8 @@ function PostButtonsBar(props) {
 
     return (
         <div className="post-buttons__block">
-            <ThumbsUp checked={props.thumbs_checked} amount={props.thumbs_amount} />
-            <Messages checked={props.messages_checked} amount={props.messages_amount}/>
+            <ThumbsUp id={props.id} checked={props.thumbs_checked} amount={props.thumbs_amount} />
+            <Messages id={props.id} checked={props.messages_checked} amount={props.messages_amount}/>
             <div className="post-buttons__share margin-left_auto cursor-pointer">
                 <img src={share} className="post-buttons__icon" alt=""/>
                 <span>&nbsp;</span>
