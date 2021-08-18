@@ -110,6 +110,8 @@ const GroupsList = [
 ];
 
 function Main() {
+    localStorage.setItem('posts_length', Posts.length);
+    Posts.map((item, index) => localStorage.setItem('post ' + index, JSON.stringify(item)))
     localStorage.setItem("post_1_thumbs_checked", "false");
     localStorage.setItem("post_2_thumbs_checked", "true");
     localStorage.setItem("post_3_thumbs_checked", "true");
@@ -155,21 +157,9 @@ function Main() {
                     <ColoredLine color={"rgba(231, 231, 231, 1)"}/>
                 </div>
 
-                {Posts.map((item) => {
+                {Posts.map((item, index) => {
                     return <Post key = {item.key}
-                                 id = {item.key}
-                                 header_text={item.header_text}
-                                 header_hrefs={item.header_hrefs}
-                                 avatar_src={item.avatar_src}
-                                 author_name={item.author_name}
-                                 author_status={item.author_status}
-                                 post_text={item.post_text}
-                                 images={item.images}
-                                 files={item.files}
-                                 thumbs_checked={item.thumbs_checked}
-                                 thumbs_amount={item.thumbs_amount}
-                                 messages_checked={item.messages_checked}
-                                 messages_amount={item.messages_amount}
+                                 id = {index}
                     />
                 })}
             </div>

@@ -10,30 +10,33 @@ import {PostFile, PostText} from "./components";
 import {useState, useCallback} from "react";
 
 function Post(props) {
+    const Post = JSON.parse(localStorage.getItem('post ' + props.id));
+
     const
-        thumbsChecked = useState(props.thumbs_checked),
-        thumbsAmount = useState(props.thumbs_amount),
-        messagesChecked = useState(props.messages_checked),
-        messagesAmount = useState(props.messages_amount)
+        thumbsChecked = useState(Post.thumbs_checked),
+        thumbsAmount = useState(Post.thumbs_amount),
+        messagesChecked = useState(Post.messages_checked),
+        messagesAmount = useState(Post.messages_amount)
     ;
+
     return (
         <div className="post__block">
             <PostHeader
-                key={props.header_text}
-                text={props.header_text}
-                hrefs={props.header_hrefs}
+                key={Post.header_text}
+                text={Post.header_text}
+                hrefs={Post.header_hrefs}
             />
             <PostAuthor
-                key={props.author_name}
-                avatar_src={props.avatar_src}
-                author_name={props.author_name}
-                author_status={props.author_status}
+                key={Post.author_name}
+                avatar_src={Post.avatar_src}
+                author_name={Post.author_name}
+                author_status={Post.author_status}
             />
-            <PostText key={props.post_text} text={props.post_text}/>
+            <PostText key={Post.post_text} text={Post.post_text}/>
 
-            {props.images.map((object) => <img className="margin-bottom_15 margin-left_30" src={object} alt=""/>)}
+            {Post.images.map((object) => <img className="margin-bottom_15 margin-left_30" src={object} alt=""/>)}
 
-            {props.files.map((file) => <PostFile key={file.name}
+            {Post.files.map((file) => <PostFile key={file.name}
                                                  name={file.name}
                                                  size={file.size}
                                                  file={file.file}
