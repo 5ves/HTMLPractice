@@ -5,6 +5,7 @@ import thumbs_up from "../images/thumbs-up.png";
 import messages_filled from "../images/message-circle_filled.png";
 import messages from "../images/message-circle.png";
 import {useState} from "react";
+import {store} from "../store/store";
 
 const ColoredLine = ({ color }) => (
     <hr
@@ -97,30 +98,45 @@ function PostFile(props) {
 
 function ThumbsUp(props) {
 
+    const
+        [
+            key,
+            checked,
+            setChecked,
+            amount,
+            setAmount
+        ] = [
+            'post_' + props.id,
+            props.checked[0],
+            props.checked[1],
+            props.amount[0],
+            props.amount[1]
+        ]
+
     function handleClick() {
-        props.checked[1](!props.checked[0]);
-        if (!props.checked[0]) {
-            props.amount[1](props.amount[0] + 1);
+        setChecked(!checked);
+        if (!checked) {
+            setAmount(amount + 1);
         } else {
-            props.amount[1](props.amount[0] - 1);
+            setAmount(amount - 1);
         }
-        if (localStorage.getItem('post_' + props.id + "_thumbs_checked") == "true") {
-            localStorage.setItem('post_' + props.id + "_thumbs_checked", "false");
-            localStorage.setItem('post_' + props.id + "_thumbs_amount",
-                (parseInt(localStorage.getItem('post_' + props.id + "_thumbs_amount")) - 1).toString());
+        if (localStorage.getItem(key + "_thumbs_checked") === "true") {
+            localStorage.setItem(key + "_thumbs_checked", "false");
+            localStorage.setItem(key + "_thumbs_amount",
+                (parseInt(localStorage.getItem(key + "_thumbs_amount")) - 1).toString());
         } else {
-            localStorage.setItem('post_' + props.id + "_thumbs_checked", "true");
-            localStorage.setItem('post_' + props.id + "_thumbs_amount",
-                (parseInt(localStorage.getItem('post_' + props.id + "_thumbs_amount")) + 1).toString());
+            localStorage.setItem(key + "_thumbs_checked", "true");
+            localStorage.setItem(key + "_thumbs_amount",
+                (parseInt(localStorage.getItem(key + "_thumbs_amount")) + 1).toString());
         }
     }
 
-    if (localStorage.getItem('post_' + props.id + "_thumbs_checked") == "true") {
+    if (localStorage.getItem(key + "_thumbs_checked") === "true") {
         return (
             <div className="post-buttons__button cursor-pointer" onClick={handleClick}>
                 <div className="post__thumbsup-filled"/>
                 <span>&nbsp;</span>
-                <span className="font-size_12">{localStorage.getItem('post_' + props.id + "_thumbs_amount")}</span>
+                <span className="font-size_12">{localStorage.getItem(key + "_thumbs_amount")}</span>
             </div>
         );
     } else {
@@ -128,22 +144,37 @@ function ThumbsUp(props) {
             <div className="post-buttons__button cursor-pointer" onClick={handleClick}>
                 <div className="post__thumbsup"/>
                 <span>&nbsp;</span>
-                <span className="font-size_12">{localStorage.getItem('post_' + props.id + "_thumbs_amount")}</span>
+                <span className="font-size_12">{localStorage.getItem(key + "_thumbs_amount")}</span>
             </div>
         );
     }
 }
 
 function Messages(props) {
+    const
+        [
+            key,
+            checked,
+            setChecked,
+            amount,
+            setAmount
+        ] = [
+            'post_' + props.id,
+            props.checked[0],
+            props.checked[1],
+            props.amount[0],
+            props.amount[1]
+        ]
+
     function handleClick() {
-        props.checked[1](!props.checked[0]);
+        setChecked(!checked);
     }
-    if (props.checked[0]) {
+    if (checked) {
         return (
             <div className="post-buttons__button cursor-pointer" onClick={handleClick}>
                 <div className="post__messages-filled"/>
                 <span>&nbsp;</span>
-                <span className="font-size_12">{props.amount[0]}</span>
+                <span className="font-size_12">{amount}</span>
             </div>
         );
     } else {
@@ -151,7 +182,7 @@ function Messages(props) {
             <div className="post-buttons__button cursor-pointer" onClick={handleClick}>
                 <div className="post__messages"/>
                 <span>&nbsp;</span>
-                <span className="font-size_12">{props.amount[0]}</span>
+                <span className="font-size_12">{amount}</span>
             </div>
         );
     }
