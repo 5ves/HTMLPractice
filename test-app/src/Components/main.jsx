@@ -40,7 +40,7 @@ const GroupsList = [
 
       Posts = [
           {
-              key: "post_1",
+              key: "post_0",
               header_text: "Ted Bell, Annette Nguyen and Cody Hawkins liked this",
               header_hrefs: ["Ted", "Bell", "Annette", "Nguyen", "Cody", "Hawkins"],
               avatar_src: avatar_1,
@@ -55,7 +55,7 @@ const GroupsList = [
               messages_amount: 9,
           },
           {
-              key: "post_2",
+              key: "post_1",
               header_text: "Audrey Alexander comment this",
               header_hrefs: ["Audrey", "Alexander"],
               avatar_src: avatar_2,
@@ -70,7 +70,7 @@ const GroupsList = [
               messages_amount: 3,
           },
           {
-              key: "post_3",
+              key: "post_2",
               header_text: "High rated post from your feed",
               header_hrefs: [],
               avatar_src: avatar_3,
@@ -93,7 +93,7 @@ const GroupsList = [
               messages_amount: 7,
           },
           {
-              key: "post_4",
+              key: "post_3",
               header_text: "First post from Audrey Alexander",
               header_hrefs: ["Audrey", "Alexander"],
               avatar_src: avatar_4,
@@ -110,28 +110,8 @@ const GroupsList = [
 ];
 
 function Main() {
-    localStorage.setItem('posts_length', Posts.length);
-    Posts.map((item, index) => localStorage.setItem('post ' + index, JSON.stringify(item)))
-    localStorage.setItem("post_1_thumbs_checked", "false");
-    localStorage.setItem("post_2_thumbs_checked", "true");
-    localStorage.setItem("post_3_thumbs_checked", "true");
-    localStorage.setItem("post_4_thumbs_checked", "false");
-
-    localStorage.setItem("post_1_thumbs_amount", "42");
-    localStorage.setItem("post_2_thumbs_amount", "12");
-    localStorage.setItem("post_3_thumbs_amount", "89");
-    localStorage.setItem("post_4_thumbs_amount", "10");
-
-    localStorage.setItem("post_1_messages_checked", "false");
-    localStorage.setItem("post_2_messages_checked", "false");
-    localStorage.setItem("post_3_messages_checked", "true");
-    localStorage.setItem("post_4_messages_checked", "false");
-
-    localStorage.setItem("post_1_messages_amount", "9");
-    localStorage.setItem("post_2_messages_amount", "3");
-    localStorage.setItem("post_3_messages_amount", "7");
-    localStorage.setItem("post_4_messages_amount", "0");
-
+    localStorage.setItem('posts_length', Posts.length.toString());
+    Posts.map((item, index) => localStorage.setItem('post ' + index, JSON.stringify(item)));
     return (
         <div className="main">
             <div className="main__left">

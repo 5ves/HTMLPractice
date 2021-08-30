@@ -1,11 +1,7 @@
 import file_icon from "../images/file.png";
 import download_icon from "../images/download-cloud.png";
-import thumbs_up_filled from "../images/thumbs-up_filled.png";
-import thumbs_up from "../images/thumbs-up.png";
-import messages_filled from "../images/message-circle_filled.png";
-import messages from "../images/message-circle.png";
-import {useState} from "react";
 import {store} from "../store/store";
+import {useEffect} from "react";
 
 const ColoredLine = ({ color }) => (
     <hr
@@ -97,46 +93,46 @@ function PostFile(props) {
 }
 
 function ThumbsUp(props) {
-
     const
         [
             key,
             checked,
             setChecked,
-            amount,
-            setAmount
+            setCheckedStore,
+            increment,
+            decrement
         ] = [
             'post_' + props.id,
             props.checked[0],
             props.checked[1],
-            props.amount[0],
-            props.amount[1]
+            props.setChecked,
+            props.increment,
+            props.decrement,
         ]
+
+    const post = JSON.parse(localStorage.getItem("post " + props.id));
 
     function handleClick() {
         setChecked(!checked);
-        if (!checked) {
-            setAmount(amount + 1);
+        setCheckedStore(props.id);
+        if (post.thumbs_checked) {
+            post.thumbs_checked = false;
+            post.thumbs_amount--;
+            decrement(props.id);
         } else {
-            setAmount(amount - 1);
+            post.thumbs_checked = true;
+            post.thumbs_amount++;
+            increment(props.id);
         }
-        if (localStorage.getItem(key + "_thumbs_checked") === "true") {
-            localStorage.setItem(key + "_thumbs_checked", "false");
-            localStorage.setItem(key + "_thumbs_amount",
-                (parseInt(localStorage.getItem(key + "_thumbs_amount")) - 1).toString());
-        } else {
-            localStorage.setItem(key + "_thumbs_checked", "true");
-            localStorage.setItem(key + "_thumbs_amount",
-                (parseInt(localStorage.getItem(key + "_thumbs_amount")) + 1).toString());
-        }
+        localStorage.setItem("post " + props.id, JSON.stringify(post));
     }
 
-    if (localStorage.getItem(key + "_thumbs_checked") === "true") {
+    if (post.thumbs_checked) {
         return (
             <div className="post-buttons__button cursor-pointer" onClick={handleClick}>
                 <div className="post__thumbsup-filled"/>
                 <span>&nbsp;</span>
-                <span className="font-size_12">{localStorage.getItem(key + "_thumbs_amount")}</span>
+                <span className="font-size_12">{post.thumbs_amount}</span>
             </div>
         );
     } else {
@@ -144,7 +140,7 @@ function ThumbsUp(props) {
             <div className="post-buttons__button cursor-pointer" onClick={handleClick}>
                 <div className="post__thumbsup"/>
                 <span>&nbsp;</span>
-                <span className="font-size_12">{localStorage.getItem(key + "_thumbs_amount")}</span>
+                <span className="font-size_12">{post.thumbs_amount}</span>
             </div>
         );
     }
@@ -153,17 +149,13 @@ function ThumbsUp(props) {
 function Messages(props) {
     const
         [
-            key,
             checked,
             setChecked,
             amount,
-            setAmount
         ] = [
-            'post_' + props.id,
             props.checked[0],
             props.checked[1],
             props.amount[0],
-            props.amount[1]
         ]
 
     function handleClick() {

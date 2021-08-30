@@ -1,8 +1,5 @@
-const INCREMENT = 'INCREMENT';
-const DECREMENT = 'DECREMENT';
+import {THUMBS_CHECK, THUMBS_INCREMENT, THUMBS_DECREMENT} from "../reducers/reducer";
 
-const incThumbsUp = (id) => ({ type : INCREMENT, payload : id});
-
-const decThumbsUp = (id) => ({ type : DECREMENT, payload : id});
-
-export {incThumbsUp, decThumbsUp};
+export const checkThumbsUp = (id) => ({ type: THUMBS_CHECK, id: id});
+export const incThumbsUp = (id) => ({ type: THUMBS_INCREMENT, id : id})
+export const decThumbsUp = (id) => ({ type : THUMBS_DECREMENT, id : id});

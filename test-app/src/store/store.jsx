@@ -7,10 +7,10 @@ import avatar_4 from "../images/avatar_4.png";
 
 import reducer from "../reducers/reducer";
 
-const initialPosts = {
+export const initialPosts = {
     byKey : {
-        "post_1": {
-            key: "post_1",
+        "post_0": {
+            key: "post_0",
             header_text: "Ted Bell, Annette Nguyen and Cody Hawkins liked this",
             header_hrefs: ["Ted", "Bell", "Annette", "Nguyen", "Cody", "Hawkins"],
             avatar_src: avatar_1,
@@ -24,8 +24,8 @@ const initialPosts = {
             messages_checked: false,
             messages_amount: 9,
         },
-        "post_2": {
-            key: "post_2",
+        "post_1": {
+            key: "post_1",
             header_text: "Audrey Alexander comment this",
             header_hrefs: ["Audrey", "Alexander"],
             avatar_src: avatar_2,
@@ -39,8 +39,8 @@ const initialPosts = {
             messages_checked: false,
             messages_amount: 3,
         },
-        "post_3": {
-            key: "post_3",
+        "post_2": {
+            key: "post_2",
             header_text: "High rated post from your feed",
             header_hrefs: [],
             avatar_src: avatar_3,
@@ -62,8 +62,8 @@ const initialPosts = {
             messages_checked: true,
             messages_amount: 7,
         },
-        "post_4": {
-            key: "post_4",
+        "post_3": {
+            key: "post_3",
             header_text: "First post from Audrey Alexander",
             header_hrefs: ["Audrey", "Alexander"],
             avatar_src: avatar_4,
@@ -78,10 +78,7 @@ const initialPosts = {
             messages_amount: 0,
         },
     },
-    keysList: ['post_1', 'post_2', 'post_3', 'post_4'],
+    keysList: ['post_0', 'post_1', 'post_2', 'post_3'],
 }
 
-
-const store = createStore( reducer, initialPosts);
-
-export default store;
+export const store = createStore( reducer, initialPosts);
