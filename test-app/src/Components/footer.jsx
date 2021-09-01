@@ -13,9 +13,9 @@ function Footer() {
                 <div className="logo_image"/>
                 <img className="footer_logo" src={LinkedIn} alt=""/>
             </div>
-            <Column classes="margin-left_69" invisibleHeader="" header="Navigation" refs={first_column}/>
-            <Column classes="margin-left_35" invisibleHeader="invisible_header" header="." refs={second_column}/>
-            <Column classes="margin-left_45" invisibleHeader="invisible_header" header="." refs={third_column}/>
+            <Column key="column_1" classes="margin-left_69" invisibleHeader="" header="Navigation" refs={first_column}/>
+            <Column key="column_2" classes="margin-left_35" invisibleHeader="invisible_header" header="." refs={second_column}/>
+            <Column key="column_3" classes="margin-left_45" invisibleHeader="invisible_header" header="." refs={third_column}/>
 
             <div className="column column_margn-left_65">
                 <div className="footer_column_header black_color regular-text">Fast access</div>

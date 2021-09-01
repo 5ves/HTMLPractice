@@ -24,6 +24,9 @@ import article_3 from "../images/article_3.png";
 
 import Post from "./post";
 import {ColoredLine, Article, Hashtag, Group} from "./components"
+import {useSelector} from "react-redux";
+import {useEffect} from "react";
+import {useActions} from "../actions/useActions";
 
 const GroupsList = [
           {name: "Moscow State Linguistical University", src: group_1, key:"group_1"},
@@ -110,8 +113,13 @@ const GroupsList = [
 ];
 
 function Main() {
-    localStorage.setItem('posts_length', Posts.length.toString());
-    Posts.map((item, index) => localStorage.setItem('post ' + index, JSON.stringify(item)));
+    // localStorage.setItem('posts_length', Posts.length.toString());
+    // localStorage.setItem('posts', JSON.stringify(Posts));
+    // Posts.map((item, index) => localStorage.setItem('post ' + index, JSON.stringify(item)));
+
+    const actions = useActions();
+    const state = useSelector((state) => state);
+    useEffect(() => {actions.fetchData()}, []);
     return (
         <div className="main">
             <div className="main__left">
@@ -137,9 +145,10 @@ function Main() {
                     <ColoredLine color={"rgba(231, 231, 231, 1)"}/>
                 </div>
 
-                {Posts.map((item, index) => {
+                {state.map((item, index) => {
                     return <Post key = {item.key}
                                  id = {index}
+                                 post = {item}
                     />
                 })}
             </div>

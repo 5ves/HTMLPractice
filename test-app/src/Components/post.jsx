@@ -10,7 +10,7 @@ import {PostFile, PostText} from "./components";
 import {useState, useCallback} from "react";
 
 function Post(props) {
-    const Post = JSON.parse(localStorage.getItem('post ' + props.id));
+    const Post = props.post;
 
     const
         thumbsChecked = useState(Post.thumbs_checked),
@@ -22,6 +22,7 @@ function Post(props) {
     return (
         <div className="post__block">
             <PostHeader
+                id={props.id}
                 key={Post.header_text}
                 text={Post.header_text}
                 hrefs={Post.header_hrefs}
@@ -34,7 +35,7 @@ function Post(props) {
             />
             <PostText key={Post.post_text} text={Post.post_text}/>
 
-            {Post.images.map((object) => <img className="margin-bottom_15 margin-left_30" src={object} alt=""/>)}
+            {Post.images.map((object, index) => <img key={"post_img_" + index}  className="margin-bottom_15 margin-left_30" src={object} alt=""/>)}
 
             {Post.files.map((file) => <PostFile key={file.name}
                                                  name={file.name}
@@ -44,10 +45,10 @@ function Post(props) {
             />)}
 
             <PostButtonsBar id = {props.id}
-                            thumbs_checked={thumbsChecked}
-                            thumbs_amount={thumbsAmount}
-                            messages_checked={messagesChecked}
-                            messages_amount={messagesAmount}
+                            thumbs_checked={Post.thumbs_checked}
+                            thumbs_amount={Post.thumbs_amount}
+                            messages_checked={Post.messages_checked}
+                            messages_amount={Post.messages_amount}
             />
         </div>
     )

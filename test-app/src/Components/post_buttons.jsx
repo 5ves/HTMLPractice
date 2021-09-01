@@ -11,7 +11,14 @@ function PostButtonsBar(props) {
 
     return (
         <div className="post-buttons__block">
-            <ThumbsUp id={props.id} checked={props.thumbs_checked} amount={props.thumbs_amount} setChecked={actions.checkThumbsUp} increment={actions.incThumbsUp} decrement={actions.decThumbsUp}/>
+            <ThumbsUp
+                id={props.id}
+                checked={props.thumbs_checked}
+                amount={props.thumbs_amount}
+                setChecked={actions.checkThumbsUp}
+                increment={actions.incThumbsUp}
+                decrement={actions.decThumbsUp}
+            />
             <Messages id={props.id} checked={props.messages_checked} amount={props.messages_amount}/>
             <div className="post-buttons__share margin-left_auto cursor-pointer">
                 <img src={share} className="post-buttons__icon" alt=""/>

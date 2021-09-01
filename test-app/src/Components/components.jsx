@@ -46,7 +46,7 @@ function Column(props) {
     return (
         <div className={"column " + props.classes}>
             <div className={"footer_column_header black_color regular-text " + props.invisibleHeader}>{props.header}</div>
-            {props.refs.map((object) => <a href="../../../index.html" className="href_text black_color">{object}</a>)}
+            {props.refs.map((object) => <a key={object} href="../../../index.html" className="href_text black_color">{object}</a>)}
         </div>
     );
 }
@@ -95,44 +95,37 @@ function PostFile(props) {
 function ThumbsUp(props) {
     const
         [
-            key,
+            id,
             checked,
-            setChecked,
+            amount,
             setCheckedStore,
             increment,
             decrement
         ] = [
-            'post_' + props.id,
-            props.checked[0],
-            props.checked[1],
+            props.id,
+            props.checked,
+            props.amount,
             props.setChecked,
             props.increment,
             props.decrement,
         ]
 
-    const post = JSON.parse(localStorage.getItem("post " + props.id));
-
     function handleClick() {
-        setChecked(!checked);
+        // setChecked(!checked);
         setCheckedStore(props.id);
-        if (post.thumbs_checked) {
-            post.thumbs_checked = false;
-            post.thumbs_amount--;
+        if (checked) {
             decrement(props.id);
         } else {
-            post.thumbs_checked = true;
-            post.thumbs_amount++;
             increment(props.id);
         }
-        localStorage.setItem("post " + props.id, JSON.stringify(post));
     }
 
-    if (post.thumbs_checked) {
+    if (checked) {
         return (
             <div className="post-buttons__button cursor-pointer" onClick={handleClick}>
                 <div className="post__thumbsup-filled"/>
                 <span>&nbsp;</span>
-                <span className="font-size_12">{post.thumbs_amount}</span>
+                <span className="font-size_12">{amount}</span>
             </div>
         );
     } else {
@@ -140,7 +133,7 @@ function ThumbsUp(props) {
             <div className="post-buttons__button cursor-pointer" onClick={handleClick}>
                 <div className="post__thumbsup"/>
                 <span>&nbsp;</span>
-                <span className="font-size_12">{post.thumbs_amount}</span>
+                <span className="font-size_12">{amount}</span>
             </div>
         );
     }
